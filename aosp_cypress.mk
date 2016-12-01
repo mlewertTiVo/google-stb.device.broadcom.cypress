@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/broadcom/cypress.mk
+include device/broadcom/cypress/cypress.mk
 
 PRODUCT_NAME                     := aosp_cypress
 PRODUCT_MODEL                    := cypress
