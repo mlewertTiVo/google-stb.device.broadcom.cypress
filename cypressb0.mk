@@ -21,6 +21,10 @@ export ANDROID_SUPPORTS_WIDEVINE  := n
 export ANDROID_ENABLE_HDMI_HDCP   := n
 export ANDROID_SUPPORTS_PLAYREADY := n
 
+# kernel command line.
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=480m@1560m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=760m@800m
+
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
 PRODUCT_NAME                     := cypressb0
