@@ -15,6 +15,10 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.verity.sq
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
+# kernel command line.
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=512m@1528m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=728m@800m
+
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
 PRODUCT_NAME                     := cypress
