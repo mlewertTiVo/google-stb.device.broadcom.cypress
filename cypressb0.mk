@@ -15,15 +15,9 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.verity.sq
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
-# bring up.  no sage, no svp.
-export SAGE_SUPPORT               := n
-export ANDROID_SUPPORTS_WIDEVINE  := n
-export ANDROID_ENABLE_HDMI_HDCP   := n
-export ANDROID_SUPPORTS_PLAYREADY := n
-
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=480m@1560m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=760m@800m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=512m@1528m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=728m@800m
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
