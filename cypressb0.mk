@@ -16,8 +16,11 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.verity.sq
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=512m@1528m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=728m@800m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=515m@1525m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=725m@800m
+
+# enable hwc2 for gfd compression.
+export HAL_HWC_VERSION           := v-2.0
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)

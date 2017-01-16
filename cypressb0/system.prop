@@ -11,9 +11,8 @@ ro.nx.heap.grow=8m
 ro.nx.heap.shrink=2m
 ro.nx.heap.gfx=64m
 
-# hwc optimizations
-ro.nx.capable.cb=1
-ro.nx.capable.bg=1
+# hwc2 options
+ro.nx.hwc2.tweak.fbcomp=1
 
 ro.nx.eth.irq_mode_mask=f:c
 
