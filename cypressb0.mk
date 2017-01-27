@@ -30,7 +30,7 @@ PRODUCT_BRAND                    := google
 PRODUCT_DEVICE                   := cypressb0
 
 # additional setup per device.
-ADDITIONAL_DEFAULT_PROPERTIES    += ro.hardware=cypressb0
-ADDITIONAL_DEFAULT_PROPERTIES    += ro.product.board=cypressb0
+PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressb0
+PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypressb0
 
 
