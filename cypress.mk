@@ -27,7 +27,7 @@ PRODUCT_BRAND                    := google
 PRODUCT_DEVICE                   := cypress
 
 # additional setup per device.
-ADDITIONAL_DEFAULT_PROPERTIES    += ro.hardware=cypress
-ADDITIONAL_DEFAULT_PROPERTIES    += ro.product.board=cypress
+PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypress
+PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypress
 
 
