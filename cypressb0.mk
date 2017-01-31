@@ -12,6 +12,10 @@ LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/u
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressb0.rc
 LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.verity.squashfs.ab-update:root/fstab.cypressb0
 
+# compile the media codecs for the device.
+LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:system/etc/media_codecs.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
+
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
