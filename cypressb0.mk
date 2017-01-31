@@ -26,6 +26,9 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=725m@800m
 # enable hwc2 for gfd compression.
 export HAL_HWC_VERSION           := v-2.0
 
+# no legacy decoder (vp9, h263, mpeg4) in hardware s.2
+export HW_DECODER_LEGACY_SUPPORT := n
+
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
 PRODUCT_NAME                     := cypressb0
