@@ -46,8 +46,8 @@ export NEXUS_FRONTEND_45216      := n
 export NEXUS_FRONTEND_45308      := n
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2048m@0m
-LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x7F800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000 pmem=8m@2040m
+LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2040m@0m
+LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x7F800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 LOCAL_DEVICE_KERNEL_CMDLINE      += rootwait init=/init ro
 export LOCAL_DEVICE_KERNEL_CMDLINE
 
