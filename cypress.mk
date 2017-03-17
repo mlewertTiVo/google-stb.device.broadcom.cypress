@@ -23,6 +23,11 @@ include device/broadcom/cypress/common.mk
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=512m@1528m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=728m@800m
 
+# *** WARNING: O-BRING-UP: no drm's.
+export ANDROID_SUPPORTS_WIDEVINE  := n
+export ANDROID_SUPPORTS_PLAYREADY := n
+# *** WARNING: O-BRING-UP: no drm's.
+
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
 PRODUCT_NAME                     := cypress
