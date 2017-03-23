@@ -10,9 +10,6 @@ LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/cypress/rcs/init.block.rc:ro
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/cypress/rcs/init.recovery.usb.rc:root/init.recovery.usb.rc   # uses 'configfs'
 export LOCAL_DEVICE_RECOVERY_RCS
 
-LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.verity.squashfs.ab-update:root/fstab.bcm
-export LOCAL_DEVICE_FSTAB
-
 LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
 export LOCAL_DEVICE_RECOVERY_FSTAB
 
@@ -22,7 +19,6 @@ export LOCAL_DEVICE_MEDIA
 
 # optional device override/addition.
 export LOCAL_DEVICE_OVERLAY      := device/broadcom/cypress/overlay
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/cypress/aon_gpio.cfg:system/vendor/power/aon_gpio.cfg
 export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled_5.kl
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/cypress/bluetooth/vnd_cypress.txt
