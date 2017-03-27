@@ -24,7 +24,7 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=515m@1525m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=274m@416m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=725m@800m
 
 # no legacy decoder (vp9, h263, mpeg4) in hardware s.2
