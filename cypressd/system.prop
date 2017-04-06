@@ -22,6 +22,7 @@ ro.nx.eth.irq_mode_mask=f:c
 ro.com.google.clientidbase=android-cypress
 
 ro.nrdp.modelgroup=CYPRESS
+ro.nrdp.validation=ninja_4
 
 # no dtu yet (fallback to large bmem).
 ro.nx.capable.dtu=0
