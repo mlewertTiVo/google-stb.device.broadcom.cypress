@@ -36,8 +36,8 @@ include device/broadcom/cypress/common.mk
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=511m@416m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=596m@928m
 
-# no legacy decoder (vp9, h263, mpeg4) in hardware s.2
-export HW_DECODER_LEGACY_SUPPORT := n
+# no legacy decoder (vp8, h263, mpeg4) in hardware s.2
+export HW_HVD_REVISION := S
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
 # dtu enabled.
