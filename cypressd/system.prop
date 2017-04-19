@@ -4,7 +4,7 @@ debug.hwui.render_dirty_regions=false
 ro.nx.mma=1
 
 # middleware heaps configuration
-ro.nx.heap.video_secure=80m
+ro.nx.heap.video_secure=96m
 ro.nx.heap.main=96m
 ro.nx.heap.drv_managed=0m
 ro.nx.heap.grow=8m
@@ -24,6 +24,13 @@ ro.com.google.clientidbase=android-cypress
 ro.nrdp.modelgroup=CYPRESS
 ro.nrdp.validation=ninja_4
 
-# gfx driver versioning package.
-ro.gfx.driver.0=gfxdriver-bcmstb
+# no dtu yet (fallback to large bmem).
+ro.nx.capable.dtu=0
+# enable pip+mosaic.
+ro.nx.trim.pip=0
+ro.nx.trim.mosaic=0
+ro.nx.trim.mtg=0
+ro.nx.trim.disp=0
+# enable dolby ms12
+ro.nx.dolby.ms=12
 
