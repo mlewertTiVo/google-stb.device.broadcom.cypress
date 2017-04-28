@@ -33,6 +33,7 @@ export V3D_VARIANT               := vc5
 export HW_AB_UPDATE_SUPPORT      := y
 export LOCAL_DEVICE_USE_VERITY   := y
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/cypress/reference_build.mk
+export BOLT_BOARD_VB             := BCM97271T
 
 # reduce nexus.ko to make room for wifi-nic.
 export NEXUS_HDMI_INPUT_SUPPORT  := n
