@@ -1,0 +1,36 @@
+# gfx setup (gles 3.1)
+ro.opengles.version=196609
+debug.hwui.render_dirty_regions=false
+ro.nx.mma=1
+
+# middleware heaps configuration
+ro.nx.heap.video_secure=96m
+ro.nx.heap.main=96m
+ro.nx.heap.drv_managed=0m
+ro.nx.heap.grow=8m
+ro.nx.heap.shrink=2m
+ro.nx.heap.gfx=64m
+
+# hwc2 options
+ro.nx.hwc2.tweak.fbcomp=1
+ro.nx.capable.cb=1
+ro.sf.lcd_density=320
+
+ro.nx.eth.irq_mode_mask=f:c
+
+# google assigned client id
+ro.com.google.clientidbase=android-cypress
+
+ro.nrdp.modelgroup=CYPRESS
+ro.nrdp.validation=ninja_4
+
+# no dtu yet (fallback to large bmem).
+ro.nx.capable.dtu=0
+# enable pip+mosaic.
+ro.nx.trim.pip=0
+ro.nx.trim.mosaic=0
+ro.nx.trim.mtg=0
+ro.nx.trim.disp=0
+# enable dolby ms12
+ro.nx.dolby.ms=12
+
