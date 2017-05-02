@@ -4,14 +4,14 @@ export LOCAL_ARM_AARCH64_NOT_ABI_COMPATIBLE := y
 export NEXUS_PLATFORM            := 97271
 export BCHP_VER                  := B0
 export PLATFORM                  := 97271
-export ANDROID_PRODUCT_OUT       := cypressd
+export ANDROID_PRODUCT_OUT       := cypressd_l
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd.rc
-LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:root/ueventd.cypressd.rc
-LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressd.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd_l.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:root/ueventd.cypressd_l.rc
+LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressd_l.rc
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.default.v2:root/fstab.cypressd
+LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.default.v2:root/fstab.cypressd_l
 LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.default.v2:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
@@ -41,13 +41,13 @@ export BDSP_MS12_SUPPORT         := y
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
-PRODUCT_NAME                     := cypressd
-PRODUCT_MODEL                    := cypressd
+PRODUCT_NAME                     := cypressd_l
+PRODUCT_MODEL                    := cypressd_l
 PRODUCT_BRAND                    := broadcom
-PRODUCT_DEVICE                   := cypressd
+PRODUCT_DEVICE                   := cypressd_l
 
 # additional setup per device.
-PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressd
-PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypressd
+PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressd_l
+PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypressd_l
 
 
