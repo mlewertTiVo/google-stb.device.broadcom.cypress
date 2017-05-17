@@ -19,7 +19,7 @@ ro.sf.lcd_density=320
 ro.nx.eth.irq_mode_mask=f:c
 
 # google assigned client id
-ro.com.google.clientidbase=android-cypress
+ro.com.google.clientidbase=android-cypress-tv
 
 ro.nrdp.modelgroup=CYPRESS
 ro.nrdp.validation=ninja_4
