@@ -34,6 +34,3 @@ ro.nx.trim.disp=0
 # enable dolby ms12
 ro.nx.dolby.ms=12
 
-# gfx driver versioning package.
-ro.gfx.driver.0=gfxdriver-bcmstb
-

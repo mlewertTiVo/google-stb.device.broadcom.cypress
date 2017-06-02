@@ -1,3 +1,10 @@
+# mandatory device configuration.
+export LOCAL_ARM_AARCH64         := y
+export LOCAL_ARM_AARCH64_NOT_ABI_COMPATIBLE := y
+export NEXUS_PLATFORM            := 97271
+export BCHP_VER                  := B0
+export PLATFORM                  := 97271
+
 # compile the rc's for the device.
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:root/init.nx.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.verity.rc:root/init.fs.rc  # verity
@@ -23,28 +30,32 @@ export LOCAL_DEVICE_AON_GPIO     := device/broadcom/cypress/aon_gpio.cfg:vendor/
 export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/cypress/bluetooth/vnd_cypress.txt
 export LOCAL_DEVICE_USERDATA     := 5927582720 # ~5.52GB
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export HW_ENCODER_SUPPORT        := n
 export HW_WIFI_NIC_SUPPORT       := y
 export BT_RFKILL_SUPPORT         := y
-export LOCAL_SYSTEMIMAGE_SQUASHFS := y
-export LOCAL_VENDORIMAGE_SQUASHFS := y
 export ANDROID_ENABLE_BT         := uart
 export V3D_VARIANT               := vc5
-export HW_AB_UPDATE_SUPPORT      := y
-export LOCAL_DEVICE_USE_VERITY   := y
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/cypress/reference_build.mk
+export BOLT_BOARD_VB             := BCM97271T
+export LOCAL_DEVICE_SYSTEM_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/system
+export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/vendor
 
 # reduce nexus.ko to make room for wifi-nic.
+#
+# 1) no hdmi input
+#
 export NEXUS_HDMI_INPUT_SUPPORT  := n
+#
+# 2) no front-end
+#
 export NEXUS_FRONTEND_3158       := n
 export NEXUS_FRONTEND_3461       := n
 export NEXUS_FRONTEND_45216      := n
 export NEXUS_FRONTEND_45308      := n
+export NEXUS_FRONTEND_3466       := n
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2040m@0m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x7F800000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 LOCAL_DEVICE_KERNEL_CMDLINE      += rootwait init=/init ro
 export LOCAL_DEVICE_KERNEL_CMDLINE
-

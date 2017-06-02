@@ -1,11 +1,13 @@
-export ANDROID_PRODUCT_OUT       := cypress
+# non-vendor-image layout: there is no separate partition for vendor.img in O+.         1
+export LOCAL_NVI_LAYOUT          := y
+export ANDROID_PRODUCT_OUT       := cypress_nvi
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypress.rc
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.cypress.rc
-LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypress_nvi.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.cypress_nvi.rc
+LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress_nvi.rc
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early:root/fstab.cypress
+LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early:root/fstab.cypress_nvi
 LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
@@ -14,11 +16,10 @@ LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no
 LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
 
 export LOCAL_SYSTEMIMAGE_SQUASHFS := y
-export LOCAL_VENDORIMAGE_SQUASHFS := y
 export HW_AB_UPDATE_SUPPORT      := y
 
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.nvi.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
@@ -38,11 +39,11 @@ export HW_DTU_SUPPORT            := y
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
-PRODUCT_NAME                     := cypress
-PRODUCT_MODEL                    := cypress
-PRODUCT_BRAND                    := google
-PRODUCT_DEVICE                   := cypress
+PRODUCT_NAME                     := cypress_nvi
+PRODUCT_MODEL                    := cypress_nvi
+PRODUCT_BRAND                    := broadcom
+PRODUCT_DEVICE                   := cypress_nvi
 
 # additional setup per device.
-PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypress
-PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypress
+PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypress_nvi
+PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypress_nvi
