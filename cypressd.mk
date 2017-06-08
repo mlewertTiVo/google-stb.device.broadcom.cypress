@@ -44,7 +44,8 @@ export HW_GPU_MMU_SUPPORT        := y
 # dolby MS12 (use default variant by setting 'y').
 export BDSP_MS12_SUPPORT         := y
 
-# baseline the common support.$(call inherit-product, device/broadcom/common/bcm.mk)
+# baseline the common support.
+$(call inherit-product, device/broadcom/common/bcm.mk)
 PRODUCT_NAME                     := cypressd
 PRODUCT_MODEL                    := cypressd
 PRODUCT_BRAND                    := broadcom
