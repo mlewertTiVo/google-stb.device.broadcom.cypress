@@ -29,7 +29,8 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v2
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v2
+export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
+
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
