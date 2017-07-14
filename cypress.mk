@@ -11,10 +11,10 @@ export LOCAL_DEVICE_FSTAB
 
 # compile the media codecs for the device.
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:system/etc/media_codecs.xml
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_v2_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
 
 export LOCAL_SYSTEMIMAGE_SQUASHFS := y
-export LOCAL_VENDORIMAGE_SQUASHFS := y
+export LOCAL_VENDORIMAGE_SQUASHFS := n
 export HW_AB_UPDATE_SUPPORT      := y
 
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
@@ -33,8 +33,6 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=608m@1432m
 export HW_HVD_REVISION := S
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
-# dtu enabled.
-export HW_DTU_SUPPORT            := y
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)

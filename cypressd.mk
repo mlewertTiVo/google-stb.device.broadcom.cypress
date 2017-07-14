@@ -22,14 +22,15 @@ LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_pe
 export HW_HVD_REDUX              := y
 
 export LOCAL_SYSTEMIMAGE_SQUASHFS := y
-export LOCAL_VENDORIMAGE_SQUASHFS := y
+export LOCAL_VENDORIMAGE_SQUASHFS := n
 export HW_AB_UPDATE_SUPPORT      := y
 
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v2
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v2
+export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
+
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
@@ -38,7 +39,7 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=698m@416m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=500m@1120m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
-export HW_HVD_REVISION := S
+export HW_HVD_REVISION           := S
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
 # dolby MS12 (use default variant by setting 'y').
