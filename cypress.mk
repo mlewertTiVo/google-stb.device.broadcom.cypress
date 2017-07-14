@@ -40,8 +40,6 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=608m@1432m
 export HW_HVD_REVISION := S
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
-# dtu enabled.
-export HW_DTU_SUPPORT            := y
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
