@@ -52,6 +52,7 @@ export NEXUS_FRONTEND_3158       := n
 export NEXUS_FRONTEND_3461       := n
 export NEXUS_FRONTEND_45216      := n
 export NEXUS_FRONTEND_45308      := n
+export NEXUS_FRONTEND_45316      := n
 export NEXUS_FRONTEND_3466       := n
 
 # kernel command line.
