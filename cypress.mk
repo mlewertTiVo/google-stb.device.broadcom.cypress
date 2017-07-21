@@ -9,6 +9,9 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.s
 LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
+LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
+export LOCAL_DEVICE_RECOVERY_FSTAB
+
 # compile the media codecs for the device.
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:system/etc/media_codecs.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_v2_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
@@ -21,7 +24,6 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 

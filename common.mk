@@ -17,9 +17,6 @@ LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/cypress/rcs/init.block.rc:ro
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/cypress/rcs/init.recovery.usb.rc:root/init.recovery.usb.rc   # uses 'configfs'
 export LOCAL_DEVICE_RECOVERY_RCS
 
-LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
-export LOCAL_DEVICE_RECOVERY_FSTAB
-
 # compile the media codecs for the device.
 LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:system/etc/media_profiles.xml
 export LOCAL_DEVICE_MEDIA
