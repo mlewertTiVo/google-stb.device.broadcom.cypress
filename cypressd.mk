@@ -9,10 +9,6 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.s
 LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early.v2:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/common/fstab/fstab.verity.squashfs.ab-update.v2:root/fstab.cypressd
-LOCAL_DEVICE_FSTAB               += device/broadcom/common/fstab/fstab.verity.squashfs.ab-update.v2:root/fstab.bcm
-export LOCAL_DEVICE_FSTAB
-
 LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
 export LOCAL_DEVICE_RECOVERY_FSTAB
 
