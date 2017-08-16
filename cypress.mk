@@ -5,8 +5,8 @@ LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.cypress.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress.rc
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early:root/fstab.cypress
-LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.squashfs.ab-update.early:root/fstab.bcm
+LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early:root/fstab.cypress
+LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early:root/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
 LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
@@ -16,7 +16,7 @@ export LOCAL_DEVICE_RECOVERY_FSTAB
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:system/etc/media_codecs.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_v2_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
 
-export LOCAL_SYSTEMIMAGE_SQUASHFS := y
+export LOCAL_SYSTEMIMAGE_SQUASHFS := n
 export LOCAL_VENDORIMAGE_SQUASHFS := n
 export HW_AB_UPDATE_SUPPORT      := y
 
