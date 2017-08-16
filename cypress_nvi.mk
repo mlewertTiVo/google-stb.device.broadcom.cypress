@@ -27,15 +27,13 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=518m@416m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=569m@934m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=240m@416m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1240m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION := S
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
-# dtu enabled.
-export HW_DTU_SUPPORT            := y
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
