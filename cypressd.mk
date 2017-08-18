@@ -30,14 +30,12 @@ export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
 export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
 export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.3-zb.bin
 
-export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
-
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=666m@416m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=500m@1120m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=730m@352m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=468m@1152m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION           := S
