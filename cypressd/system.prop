@@ -33,4 +33,4 @@ ro.nx.trim.mtg=0
 ro.nx.trim.disp=0
 # enable dolby ms12
 ro.nx.dolby.ms=12
-
+ro.nx.audio.clock_acc=1
