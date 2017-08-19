@@ -34,8 +34,8 @@ export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.3-
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=730m@352m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=468m@1152m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=786m@352m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=412m@1140m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION           := S
