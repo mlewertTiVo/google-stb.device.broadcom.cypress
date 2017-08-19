@@ -37,6 +37,9 @@ export BOLT_BOARD_VB             := BCM97271T
 export LOCAL_DEVICE_SYSTEM_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/system
 export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/vendor
 
+# dtu enabled.
+export HW_DTU_SUPPORT            := y
+
 # reduce nexus.ko to make room for wifi-nic.
 #
 # 1) no hdmi input
