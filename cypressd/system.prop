@@ -5,11 +5,12 @@ ro.nx.mma=1
 
 # middleware heaps configuration
 ro.nx.heap.video_secure=96m
-ro.nx.heap.main=96m
+ro.nx.heap.main=160m
 ro.nx.heap.drv_managed=0m
 ro.nx.heap.grow=8m
 ro.nx.heap.shrink=2m
 ro.nx.heap.gfx=64m
+ro.nx.capable.dtu=1
 
 # hwc2 options
 ro.nx.hwc2.tweak.fbcomp=1
@@ -24,8 +25,6 @@ ro.com.google.clientidbase=android-cypress-tv
 ro.nrdp.modelgroup=CYPRESS
 ro.nrdp.validation=ninja_4
 
-# no dtu yet (fallback to large bmem).
-ro.nx.capable.dtu=0
 # enable pip+mosaic.
 ro.nx.trim.pip=0
 ro.nx.trim.mosaic=0
@@ -33,7 +32,3 @@ ro.nx.trim.mtg=0
 ro.nx.trim.disp=0
 # enable dolby ms12
 ro.nx.dolby.ms=12
-
-# gfx driver versioning package.
-ro.gfx.driver.0=gfxdriver-bcmstb
-
