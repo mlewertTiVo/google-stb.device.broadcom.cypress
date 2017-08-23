@@ -14,7 +14,7 @@ export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # compile the media codecs for the device.
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:system/etc/media_codecs.xml
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_v2_no_legacy_enc.xml:system/etc/media_codecs_performance.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypressd/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v3
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default_v2.conf

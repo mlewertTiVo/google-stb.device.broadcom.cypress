@@ -14,7 +14,7 @@ export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # compile the media codecs for the device, enable the secondary (reduced caps) hw decoder.
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_with_pip__no_legacy_enc.xml:system/etc/media_codecs.xml
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_codecs_performance_with_pip__no_legacy_enc.xml:system/etc/media_codecs_performance.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypressd/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 export HW_HVD_REDUX              := y
 
 export LOCAL_SYSTEMIMAGE_SQUASHFS := n
