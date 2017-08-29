@@ -43,6 +43,6 @@ PRODUCT_DEVICE                   := cypressd_l
 
 # additional setup per device.
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressd_l
-PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypressd_l
+TARGET_BOOTLOADER_BOARD_NAME := cypressd_l
 
 

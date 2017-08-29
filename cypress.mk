@@ -46,4 +46,4 @@ PRODUCT_DEVICE                   := cypress
 
 # additional setup per device.
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypress
-PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypress
+TARGET_BOOTLOADER_BOARD_NAME := cypress

@@ -45,4 +45,4 @@ PRODUCT_DEVICE                   := cypress_nvi
 
 # additional setup per device.
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypress_nvi
-PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypress_nvi
+TARGET_BOOTLOADER_BOARD_NAME := cypress_nvi
