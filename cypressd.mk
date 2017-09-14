@@ -54,4 +54,5 @@ PRODUCT_DEVICE                   := cypressd
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressd
 PRODUCT_PROPERTY_OVERRIDES    += ro.product.board=cypressd
 
-
+# enabling dtcp
+export DTCP_IP_SAGE_SUPPORT 	:= y
