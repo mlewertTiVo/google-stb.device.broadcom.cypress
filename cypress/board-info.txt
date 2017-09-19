@@ -1,3 +1,2 @@
 require board=cypress
-require version-bootloader=v1.32-207-gafae18a
-
+require version-bootloader=v1.32-209-g10b1c08
