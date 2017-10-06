@@ -2,7 +2,11 @@ export ANDROID_PRODUCT_OUT       := cypressd
 LOCAL_DEVICE_HWIMG_BOOT1         := n
 
 # compile the rc's for the device.
+ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.ft.rc:root/init.cypressd.rc
+else
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd.rc
+endif
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:root/ueventd.cypressd.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressd.rc
 
@@ -28,9 +32,12 @@ export LOCAL_VENDORIMAGE_SQUASHFS := n
 export HW_AB_UPDATE_SUPPORT       := y
 
 ifneq ($(LOCAL_DEVICE_HWIMG_BOOT1),n)
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v2
+export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-v2/block
 else
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
+export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy/block
+endif
+ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
+export LOCAL_DEVICE_SEPOLICY_BLOCK += device/broadcom/cypress/sepolicy/treble
 endif
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export LOCAL_DEVICE_USE_VERITY   := y
