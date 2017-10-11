@@ -52,7 +52,7 @@ include device/broadcom/cypress/common.mk
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=320m@352m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=668m@1340m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1240m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION           := S
