@@ -19,6 +19,8 @@ LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypressd/media_codec
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-v3/block
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default_v2.conf
 
+export LOCAL_DEVICE_RTS_MODE     := 6
+
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
