@@ -16,7 +16,7 @@ export LOCAL_DEVICE_RECOVERY_FSTAB
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:system/etc/media_codecs.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypressd/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block-v3
+export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-v3/block
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default_v2.conf
 
 # common to all cypress devices.
