@@ -6,7 +6,11 @@ export BCHP_VER                  := B0
 export PLATFORM                  := 97271
 
 # compile the rc's for the device.
+ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.nx.rc:root/init.nx.rc
+else
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.nx.rc:root/init.nx.rc
+endif
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.verity.rc:root/init.fs.rc  # verity
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:root/init.eth.rc   # uses 'eth0'
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/init.block.rc:root/init.block.rc   # block devices

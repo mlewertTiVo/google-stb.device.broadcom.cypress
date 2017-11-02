@@ -18,11 +18,10 @@ LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypress/media_codecs
 export LOCAL_SYSTEMIMAGE_SQUASHFS := n
 export HW_AB_UPDATE_SUPPORT      := y
 
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
+export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy/block
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.nvi.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
-export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-block
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
