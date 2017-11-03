@@ -7,7 +7,7 @@ export PLATFORM                  := 97271
 export ANDROID_PRODUCT_OUT       := cypressd_l
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd_l.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.mmu.rc:root/init.cypressd_l.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:root/ueventd.cypressd_l.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressd_l.rc
 
