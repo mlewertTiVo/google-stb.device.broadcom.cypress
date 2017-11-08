@@ -10,6 +10,7 @@ ro.nx.heap.drv_managed=0m
 ro.nx.heap.grow=2m
 ro.nx.heap.shrink=2m
 ro.nx.heap.gfx=64m
+ro.nx.heap.export=2m
 ro.nx.capable.dtu=1
 
 # hwc2 options
