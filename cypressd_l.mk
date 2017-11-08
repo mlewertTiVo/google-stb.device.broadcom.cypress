@@ -47,4 +47,5 @@ PRODUCT_DEVICE                   := cypressd_l
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressd_l
 TARGET_BOOTLOADER_BOARD_NAME := cypressd_l
 
-
+# enabling dtcp
+export DTCP_IP_SAGE_SUPPORT     := y
