@@ -42,6 +42,8 @@ endif
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
+export LOCAL_DEVICE_RTS_MODE     := 6
+
 # bootloader firmware manipulation.
 export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
 export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
