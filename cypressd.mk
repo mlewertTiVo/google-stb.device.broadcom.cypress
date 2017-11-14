@@ -1,5 +1,6 @@
 export ANDROID_PRODUCT_OUT       := cypressd
 LOCAL_DEVICE_HWIMG_BOOT1         := n
+export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
