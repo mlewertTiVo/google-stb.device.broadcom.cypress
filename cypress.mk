@@ -1,4 +1,5 @@
 export ANDROID_PRODUCT_OUT       := cypress
+export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
