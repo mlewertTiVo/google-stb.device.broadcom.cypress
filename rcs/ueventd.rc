@@ -15,6 +15,6 @@
 /dev/mali0                0666   root       root
 /dev/ion                  0666   root       root
 
-/dev/dri/card*            0660   root       graphics
+/dev/dri/card*            0666   root       graphics
 
 /dev/block/mmcblk0boot1   0660   root       root
