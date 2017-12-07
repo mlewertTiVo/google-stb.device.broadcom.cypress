@@ -1,5 +1,6 @@
 export ANDROID_PRODUCT_OUT       := cypressd
 LOCAL_DEVICE_HWIMG_BOOT1         := n
+export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
@@ -42,6 +43,8 @@ endif
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
 export LOCAL_DEVICE_USE_VERITY   := y
 
+export LOCAL_DEVICE_RTS_MODE     := 6
+
 # bootloader firmware manipulation.
 export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
 export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
@@ -51,7 +54,7 @@ export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.5-
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=320m@352m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=324m@350m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1240m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
@@ -73,3 +76,5 @@ PRODUCT_DEVICE                   := cypressd
 PRODUCT_PROPERTY_OVERRIDES   += ro.hardware=cypressd
 TARGET_BOOTLOADER_BOARD_NAME := cypressd
 
+# enabling dtcp
+export DTCP_IP_SAGE_SUPPORT     := y

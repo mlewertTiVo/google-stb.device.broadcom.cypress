@@ -10,4 +10,7 @@ add_lunch_combo cypressd_l-userdebug
 add_lunch_combo cypress_nvi-userdebug
 add_lunch_combo cypress_nvi-user
 
+add_lunch_combo cypress_l-userdebug
+add_lunch_combo cypress_l-user
+
 add_lunch_combo aosp_cypress-userdebug
