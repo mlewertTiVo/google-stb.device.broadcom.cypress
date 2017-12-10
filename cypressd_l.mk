@@ -1,4 +1,4 @@
-export ANDROID_PRODUCT_OUT       := cypressd_l
+export LOCAL_PRODUCT_OUT       := cypressd_l
 
 # compile the rc's for the device.
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd_l.rc

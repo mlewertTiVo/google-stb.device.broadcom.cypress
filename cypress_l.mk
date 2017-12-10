@@ -1,4 +1,4 @@
-export ANDROID_PRODUCT_OUT       := cypress_l
+export LOCAL_PRODUCT_OUT       := cypress_l
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.

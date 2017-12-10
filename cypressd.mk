@@ -1,4 +1,4 @@
-export ANDROID_PRODUCT_OUT       := cypressd
+export LOCAL_PRODUCT_OUT       := cypressd
 LOCAL_DEVICE_HWIMG_BOOT1         := n
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
