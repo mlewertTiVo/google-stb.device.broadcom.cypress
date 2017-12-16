@@ -7,7 +7,7 @@ export PLATFORM                  := 97271
 export ANDROID_PRODUCT_OUT       := cypress
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.mmu.rc:root/init.cypress.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypress.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.cypress.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress.rc
 
@@ -38,7 +38,7 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=608m@1432m
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION := S
 # v3d mmu available.
-export HW_GPU_MMU_SUPPORT        := y
+export HW_GPU_MMU_SUPPORT        := n
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
