@@ -36,6 +36,7 @@ else
 export LOCAL_DEVICE_USERDATA     := 4294967296  # 4GB.
 endif
 export HW_ENCODER_SUPPORT        := n
+export HW_WIFI_SUPPORT           := y
 export HW_WIFI_NIC_SUPPORT       := y
 export BT_RFKILL_SUPPORT         := y
 export ANDROID_ENABLE_BT         := uart
