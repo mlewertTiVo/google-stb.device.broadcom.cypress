@@ -5,6 +5,10 @@ export NEXUS_PLATFORM            := 97271
 export BCHP_VER                  := B0
 export PLATFORM                  := 97271
 
+# binary distribution
+export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.1/cypress
+export BCM_BINDIST_KNL_ROOT      := device/broadcom/cypress-kernel/4.1
+
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.mmu.nx.rc:root/init.nx.rc
