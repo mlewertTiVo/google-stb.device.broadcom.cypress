@@ -1,4 +1,5 @@
-export ANDROID_PRODUCT_OUT       := cypress
+export LOCAL_PRODUCT_OUT       := cypress
+export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
@@ -28,18 +29,19 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy/block
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 export LOCAL_DEVICE_SEPOLICY_BLOCK += device/broadcom/cypress/sepolicy/treble
 endif
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
+export LOCAL_DEVICE_GPT_O_LAYOUT := y
 export LOCAL_DEVICE_USE_VERITY   := y
 
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=240m@416m
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=242m@414m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1240m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
-export HW_HVD_REVISION := S
+export HW_HVD_REVISION           := S
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
 

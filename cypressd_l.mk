@@ -1,4 +1,4 @@
-export ANDROID_PRODUCT_OUT       := cypressd_l
+export LOCAL_PRODUCT_OUT       := cypressd_l
 
 # compile the rc's for the device.
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd_l.rc
@@ -18,6 +18,8 @@ LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypressd/media_codec
 
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-v3/block
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/default_v2.conf
+
+export LOCAL_DEVICE_RTS_MODE     := 6
 
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
@@ -45,4 +47,5 @@ PRODUCT_DEVICE                   := cypressd_l
 PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypressd_l
 TARGET_BOOTLOADER_BOARD_NAME := cypressd_l
 
-
+# enabling dtcp
+export DTCP_IP_SAGE_SUPPORT     := y
