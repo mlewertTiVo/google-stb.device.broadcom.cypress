@@ -38,7 +38,7 @@ include device/broadcom/cypress/common.mk
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=242m@414m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1240m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1232m
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION           := S
@@ -47,7 +47,8 @@ export HW_GPU_MMU_SUPPORT        := y
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
-$(call inherit-product, build/make/target/product/product_launched_with_n.mk)
+#$(call inherit-product, build/make/target/product/product_launched_with_o.mk)
+PRODUCT_SHIPPING_API_LEVEL       := 26
 PRODUCT_NAME                     := cypress
 PRODUCT_MODEL                    := cypress
 PRODUCT_BRAND                    := google
