@@ -3,16 +3,16 @@ LOCAL_DEVICE_HWIMG_BOOT1         := n
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd.rc
-LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:root/ueventd.cypressd.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cypressd.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressd.rc
 
 ifneq ($(LOCAL_DEVICE_HWIMG_BOOT1),n)
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early.v2:root/fstab.cypressd
-LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early.v2:root/fstab.bcm
+LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early.v2:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypressd
+LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early.v2:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 else
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early:root/fstab.cypressd
-LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early:root/fstab.bcm
+LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypressd
+LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 endif
 export LOCAL_DEVICE_FSTAB
 
@@ -69,7 +69,39 @@ PRODUCT_BRAND                    := broadcom
 PRODUCT_DEVICE                   := cypressd
 
 # additional setup per device.
-PRODUCT_PROPERTY_OVERRIDES   += ro.hardware=cypressd
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.hardware=cypressd \
+   \
+   ro.opengles.version=196609 \
+   debug.hwui.render_dirty_regions=false \
+   ro.nx.mma=1 \
+   \
+   ro.nx.heap.video_secure=96m \
+   ro.nx.heap.main=160m \
+   ro.nx.heap.drv_managed=0m \
+   ro.nx.heap.grow=2m \
+   ro.nx.heap.shrink=2m \
+   ro.nx.heap.gfx=64m \
+   ro.nx.heap.export=2m \
+   ro.nx.capable.dtu=1 \
+   \
+   ro.nx.hwc2.tweak.fbcomp=1 \
+   ro.nx.capable.cb=1 \
+   ro.sf.lcd_density=320 \
+   \
+   ro.nx.eth.irq_mode_mask=f:c \
+   \
+   ro.com.google.clientidbase=android-cypress-tv \
+   ro.nrdp.modelgroup=CYPRESS \
+   ro.nrdp.validation=ninja_5.1 \
+   \
+   ro.nx.trim.pip=0 \
+   ro.nx.trim.mosaic=0 \
+   ro.nx.trim.mtg=0 \
+   ro.nx.trim.disp=0 \
+   ro.nx.dolby.ms=12 \
+   ro.nx.audio.clock_acc=0
+
 TARGET_BOOTLOADER_BOARD_NAME := cypressd
 
 # enabling dtcp

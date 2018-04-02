@@ -2,12 +2,12 @@ export LOCAL_PRODUCT_OUT       := cypress
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypress.rc
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.cypress.rc
+LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cypress.rc
+LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress.rc
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early:root/fstab.cypress
-LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early:root/fstab.bcm
+LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
+LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 export LOCAL_DEVICE_FSTAB
 
 LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
@@ -51,5 +51,29 @@ PRODUCT_BRAND                    := google
 PRODUCT_DEVICE                   := cypress
 
 # additional setup per device.
-PRODUCT_PROPERTY_OVERRIDES    += ro.hardware=cypress
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.hardware=cypress \
+   \
+   ro.opengles.version=196609 \
+   debug.hwui.render_dirty_regions=false \
+   ro.nx.mma=1 \
+   \
+   ro.nx.heap.video_secure=80m \
+   ro.nx.heap.main=96m \
+   ro.nx.heap.drv_managed=0m \
+   ro.nx.heap.grow=2m \
+   ro.nx.heap.shrink=2m \
+   ro.nx.heap.gfx=64m \
+   ro.nx.capable.dtu=1 \
+   \
+   ro.nx.hwc2.tweak.fbcomp=1 \
+   ro.nx.capable.cb=1 \
+   ro.sf.lcd_density=320 \
+   \
+   ro.nx.eth.irq_mode_mask=f:c \
+   \
+   ro.com.google.clientidbase=android-cypress-tv \
+   ro.nrdp.modelgroup=CYPRESS \
+   ro.nrdp.validation=ninja_5.1
+
 TARGET_BOOTLOADER_BOARD_NAME := cypress
