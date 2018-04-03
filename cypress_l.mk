@@ -2,11 +2,7 @@ export LOCAL_PRODUCT_OUT       := cypress_l
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
-ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.ft.rc:root/init.cypress_l.rc
-else
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypress_l.rc
-endif
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:root/ueventd.cypress_l.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress_l.rc
 

@@ -3,11 +3,7 @@ LOCAL_DEVICE_HWIMG_BOOT1         := n
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
-ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.ft.rc:root/init.cypressd.rc
-else
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:root/init.cypressd.rc
-endif
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/ueventd.rc:root/ueventd.cypressd.rc
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypressd.rc
 
