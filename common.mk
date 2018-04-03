@@ -22,7 +22,7 @@ LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/cypress/rcs/init.recovery.us
 export LOCAL_DEVICE_RECOVERY_RCS
 
 # compile the media codecs for the device.
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:system/etc/media_profiles.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 export LOCAL_DEVICE_MEDIA
 
 # optional device override/addition.
