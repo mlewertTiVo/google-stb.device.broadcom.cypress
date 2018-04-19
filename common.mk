@@ -29,7 +29,7 @@ LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/cypress/rcs/init.recovery.us
 export LOCAL_DEVICE_RECOVERY_RCS
 
 # compile the media codecs for the device.
-LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+LOCAL_DEVICE_MEDIA               += device/broadcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 export LOCAL_DEVICE_MEDIA
 
 # optional device override/addition.
@@ -43,8 +43,8 @@ else
 export LOCAL_DEVICE_USERDATA     := 4294967296  # 4GB.
 endif
 export HW_ENCODER_SUPPORT        := n
-export HW_WIFI_SUPPORT           := y
-export HW_WIFI_NIC_SUPPORT       := y
+export HW_WIFI_SUPPORT           ?= y
+export HW_WIFI_NIC_SUPPORT       ?= y
 export BT_RFKILL_SUPPORT         := y
 export ANDROID_ENABLE_BT         := uart
 export V3D_VARIANT               := vc5
@@ -72,7 +72,12 @@ export NEXUS_FRONTEND_45316      := n
 export NEXUS_FRONTEND_3466       := n
 
 # kernel command line.
+ifeq (${LOCAL_ARM_AARCH64_COMPAT_32_BIT},y)
+# TODO: figure out the ramoops hole setup.
+LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2048m@0m
+else
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2000m@0m mem=40m@2008m
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x7D000000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
+endif
 LOCAL_DEVICE_KERNEL_CMDLINE      += rootwait init=/init ro
 export LOCAL_DEVICE_KERNEL_CMDLINE
