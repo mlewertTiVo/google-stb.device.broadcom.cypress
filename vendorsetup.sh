@@ -8,4 +8,7 @@ add_lunch_combo cypressd-userdebug
 add_lunch_combo cypress_nvi-userdebug
 add_lunch_combo cypress_nvi-user
 
+# 't' target - cypress (kernel 64, android 32) with tee support.
+add_lunch_combo cypresst-userdebug
+
 add_lunch_combo aosp_cypress-userdebug
