@@ -7,8 +7,8 @@ export PLATFORM                  := 97271
 
 # binary distribution
 export BCM_BINDIST_BL_ROOT       := vendor/broadcom/prebuilts/bootloaders/cypress
-export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.1/cypress
-export BCM_BINDIST_KNL_ROOT      := device/broadcom/cypress-kernel/4.1
+export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.9/cypress
+export BCM_BINDIST_KNL_ROOT      := device/broadcom/cypress-kernel/4.9
 export BCM_DIST_FORCED_BINDIST   := y
 export BCM_DIST_BLIM_BINS        := y
 
