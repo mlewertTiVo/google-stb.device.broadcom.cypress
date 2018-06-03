@@ -1,6 +1,10 @@
 add_lunch_combo cypress-userdebug
 add_lunch_combo cypress-user
 
+# exact same as 'cypress' but without a|b mode support.
+add_lunch_combo cypress_nab-userdebug
+add_lunch_combo cypress_nab-user
+
 # 'd' target - cypress with additional features (dual decode)
 add_lunch_combo cypressd-userdebug
 

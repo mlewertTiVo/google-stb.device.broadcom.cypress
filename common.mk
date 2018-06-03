@@ -19,7 +19,6 @@ else
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.mmu.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
 endif
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.verity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fs.rc     # verity
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.eth.eth0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.eth.rc     # uses 'eth0'
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/init.block.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.block.rc     # block devices
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/init.bcm.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.bcm.usb.rc # uses 'configfs'
 export LOCAL_DEVICE_RCS
