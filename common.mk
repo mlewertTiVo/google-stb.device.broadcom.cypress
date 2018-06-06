@@ -10,7 +10,6 @@ export BCM_BINDIST_BL_ROOT       := vendor/broadcom/prebuilts/bootloaders/cypres
 export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.9/cypress
 export BCM_BINDIST_KNL_ROOT      := device/broadcom/cypress-kernel/4.9
 export BCM_DIST_FORCED_BINDIST   := y
-export BCM_DIST_BLIM_BINS        := y
 
 # compile the rc's for the device.
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
