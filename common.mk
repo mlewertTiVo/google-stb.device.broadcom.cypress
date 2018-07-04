@@ -45,7 +45,9 @@ export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/cypress/reference_build.m
 export BOLT_BOARD_VB             := BCM97271T
 export LOCAL_DEVICE_SYSTEM_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/system
 export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/vendor
-export LOCAL_DEVICE_PAK_BINARY   := pak.7271.zd.bin
+
+export LOCAL_DEVICE_PAK_BINARY     := pak.7271.zb.bin
+export LOCAL_DEVICE_PAK_BINARY_ALT := pak.7271.zd.bin
 
 # dtu enabled.
 export HW_DTU_SUPPORT            := y
