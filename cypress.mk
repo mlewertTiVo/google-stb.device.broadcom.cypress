@@ -46,7 +46,7 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=524m@416m
 LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=562m@940m
 else
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=242m@414m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1232m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1176m
 endif
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
