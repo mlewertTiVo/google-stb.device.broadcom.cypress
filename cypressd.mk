@@ -24,8 +24,6 @@ LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_wi
 LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypressd/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 export HW_HVD_REDUX              := y
 
-export LOCAL_SYSTEMIMAGE_SQUASHFS := n
-export LOCAL_VENDORIMAGE_SQUASHFS := n
 export HW_AB_UPDATE_SUPPORT       := y
 
 ifneq ($(LOCAL_DEVICE_HWIMG_BOOT1),n)
@@ -36,7 +34,8 @@ endif
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 export LOCAL_DEVICE_SEPOLICY_BLOCK += device/broadcom/cypress/sepolicy/treble
 endif
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.conf
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
+export LOCAL_DEVICE_GPT_O_LAYOUT := y
 export LOCAL_DEVICE_USE_VERITY   := y
 
 export LOCAL_DEVICE_RTS_MODE     := 6

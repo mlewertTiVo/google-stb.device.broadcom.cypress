@@ -15,4 +15,8 @@ add_lunch_combo cypress_nvi-user
 # 't' target - cypress (kernel 64, android 32) with tee support.
 add_lunch_combo cypresst-userdebug
 
+# 'cypress' with 3GB of memory (instead of 2GB); consequently no dtu.
+add_lunch_combo cypress_3gb-userdebug
+add_lunch_combo cypress_3gb-user
+
 add_lunch_combo aosp_cypress-userdebug

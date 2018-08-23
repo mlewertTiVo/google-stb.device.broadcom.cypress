@@ -41,8 +41,13 @@ export LOCAL_DEVICE_USE_VERITY   := y
 include device/broadcom/cypress/common.mk
 
 # kernel command line.
+ifeq ($(HW_DTU_SUPPORT),n)
+LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=524m@416m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=562m@940m
+else
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=242m@414m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1232m
+LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1176m
+endif
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION           := S
@@ -72,7 +77,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.heap.grow=2m \
    ro.nx.heap.shrink=2m \
    ro.nx.heap.gfx=64m \
-   ro.nx.capable.dtu=1 \
    \
    ro.nx.hwc2.tweak.fbcomp=1 \
    ro.nx.capable.cb=1 \
@@ -83,5 +87,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.com.google.clientidbase=android-cypress-tv \
    ro.nrdp.modelgroup=CYPRESS \
    ro.nrdp.validation=ninja_5.1
+
+ifeq ($(HW_DTU_SUPPORT),n)
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.nx.capable.dtu=0
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.nx.capable.dtu=1
+endif
 
 TARGET_BOOTLOADER_BOARD_NAME := cypress
