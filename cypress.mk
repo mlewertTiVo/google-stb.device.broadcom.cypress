@@ -1,6 +1,13 @@
-export LOCAL_PRODUCT_OUT       := cypress
-export LOCAL_DEVICE_FULL_TREBLE  := y
+export LOCAL_PRODUCT_OUT           := cypress
+export LOCAL_DEVICE_FULL_TREBLE    := y
 
+ifeq ($(LOCAL_NVI_LAYOUT),y)
+export HW_AB_UPDATE_SUPPORT      := y
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/nvi.o.conf
+LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
+LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
+LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
+else
 ifeq ($(LOCAL_DEVICE_FORCED_NAB),y)
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/nab.o.conf
 LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
@@ -12,6 +19,7 @@ export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
 LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
 LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
+endif
 endif
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 export LOCAL_DEVICE_FSTAB

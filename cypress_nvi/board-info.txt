@@ -1,2 +1,0 @@
-require board=cypress_nvi
-
