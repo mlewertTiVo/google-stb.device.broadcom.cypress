@@ -88,3 +88,6 @@ LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x7D000000 ramoops.mem_s
 endif
 LOCAL_DEVICE_KERNEL_CMDLINE      += rootwait init=/init ro
 export LOCAL_DEVICE_KERNEL_CMDLINE
+
+# Netflix support
+export LOCAL_DEVICE_NRDP_MODEL_GROUP := CYPRESS
