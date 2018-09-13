@@ -91,8 +91,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.eth.irq_mode_mask=f:c \
    \
    ro.com.google.clientidbase=android-cypress-tv \
-   ro.nrdp.modelgroup=CYPRESS \
-   ro.nrdp.validation=ninja_5.1 \
    \
    ro.nx.trim.pip=0 \
    ro.nx.trim.mosaic=0 \
