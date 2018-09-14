@@ -4,15 +4,15 @@ export LOCAL_DEVICE_FULL_TREBLE    := y
 ifeq ($(LOCAL_NVI_LAYOUT),y)
 export HW_AB_UPDATE_SUPPORT      := y
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/nvi.o.conf
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
+LOCAL_DEVICE_FSTAB               ?= device/broadcom/cypress/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
 LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
-LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
+LOCAL_DEVICE_RECOVERY_FSTAB      ?= device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
 else
 ifeq ($(LOCAL_DEVICE_FORCED_NAB),y)
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/nab.o.conf
-LOCAL_DEVICE_FSTAB               := device/broadcom/cypress/fstab/fstab.verity.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
+LOCAL_DEVICE_FSTAB               ?= device/broadcom/cypress/fstab/fstab.verity.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.cypress
 LOCAL_DEVICE_FSTAB               += device/broadcom/cypress/fstab/fstab.verity.early:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
-LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.default/recovery.fstab
+LOCAL_DEVICE_RECOVERY_FSTAB      ?= device/broadcom/common/recovery/fstab.default/recovery.fstab
 else
 export HW_AB_UPDATE_SUPPORT      := y
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
@@ -26,18 +26,18 @@ export LOCAL_DEVICE_FSTAB
 export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # compile the rc's for the device.
-LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cypress.rc
+LOCAL_DEVICE_RCS                 ?= device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cypress.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
-LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress.rc
+LOCAL_DEVICE_RECOVERY_RCS        ?= device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.cypress.rc
 
 # compile the media codecs for the device.
 LOCAL_DEVICE_MEDIA               := device/broadcom/common/media/media_codecs_no_legacy_enc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
 LOCAL_DEVICE_MEDIA               += device/broadcom/cypress/cypress/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 
 ifeq ($(HW_AB_UPDATE_SUPPORT),y)
-LOCAL_DEVICE_SEPOLICY_BLOCK      := device/broadcom/cypress/sepolicy/block
+LOCAL_DEVICE_SEPOLICY_BLOCK      ?= device/broadcom/cypress/sepolicy/block
 else
-LOCAL_DEVICE_SEPOLICY_BLOCK      := device/broadcom/cypress/sepolicy-v4/block
+LOCAL_DEVICE_SEPOLICY_BLOCK      ?= device/broadcom/cypress/sepolicy-v4/block
 endif
 ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_SEPOLICY_BLOCK      += device/broadcom/cypress/sepolicy/treble
@@ -112,4 +112,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.capable.dtu=1
 endif
 
-TARGET_BOOTLOADER_BOARD_NAME := cypress
+TARGET_BOOTLOADER_BOARD_NAME ?= cypress
