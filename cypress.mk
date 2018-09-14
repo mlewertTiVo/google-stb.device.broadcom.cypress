@@ -1,4 +1,6 @@
+ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT           := cypress
+endif
 export LOCAL_DEVICE_FULL_TREBLE    := y
 
 ifeq ($(LOCAL_NVI_LAYOUT),y)
