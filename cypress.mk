@@ -88,7 +88,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.hardware=cypress \
    \
    ro.opengles.version=196609 \
-   debug.hwui.render_dirty_regions=false \
    ro.nx.mma=1 \
    \
    ro.nx.heap.video_secure=80m \
