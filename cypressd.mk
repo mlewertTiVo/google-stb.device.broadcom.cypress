@@ -1,4 +1,6 @@
+ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT       := cypressd
+endif
 LOCAL_DEVICE_HWIMG_BOOT1         := n
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
