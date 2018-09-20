@@ -37,8 +37,6 @@ export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_p
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/cypress/bluetooth/vnd_cypress.txt
 ifneq ($(LOCAL_DEVICE_GPT_O_LAYOUT),y)
 export LOCAL_DEVICE_USERDATA     := 5368709120  # 5.0009GB.
-else
-export LOCAL_DEVICE_USERDATA     := 4294967296  # 4GB.
 endif
 export HW_ENCODER_SUPPORT        := n
 export HW_WIFI_SUPPORT           ?= y
