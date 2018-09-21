@@ -79,8 +79,10 @@ LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2048m@0m
 else
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2000m@0m mem=40m@2008m
 ifeq ($(HW_DTU_SUPPORT),n)
-# no dtu support, assume a 3GB configuration.
+ifneq ($(LOCAL_NVI_LAYOUT),y)
+# no dtu support, not nvi setup, assume a 3GB configuration.
 LOCAL_DEVICE_KERNEL_CMDLINE      += mem=1024m@3072m
+endif
 endif
 LOCAL_DEVICE_KERNEL_CMDLINE      += ramoops.mem_address=0x7D000000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 endif
