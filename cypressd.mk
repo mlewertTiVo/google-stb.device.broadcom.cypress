@@ -101,6 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.com.google.clientidbase=android-cypress-tv \
    \
    ro.nx.trim.pip=0 \
+   ro.nx.trim.pip.qr=1 \
    ro.nx.trim.mosaic=0 \
    ro.nx.trim.mtg=0 \
    ro.nx.trim.disp=0 \
