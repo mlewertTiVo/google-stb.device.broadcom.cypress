@@ -2,7 +2,6 @@ ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT       := cypressd
 endif
 LOCAL_DEVICE_HWIMG_BOOT1         := n
-export LOCAL_DEVICE_FULL_TREBLE  := y
 
 # compile the rc's for the device.
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cypressd.rc
@@ -33,9 +32,7 @@ export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy-v2/block
 else
 export LOCAL_DEVICE_SEPOLICY_BLOCK := device/broadcom/cypress/sepolicy/block
 endif
-ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 export LOCAL_DEVICE_SEPOLICY_BLOCK += device/broadcom/cypress/sepolicy/treble
-endif
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 export LOCAL_DEVICE_USE_VERITY   := y

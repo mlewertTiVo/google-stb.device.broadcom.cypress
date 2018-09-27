@@ -1,7 +1,6 @@
 ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT           := cypress
 endif
-export LOCAL_DEVICE_FULL_TREBLE    := y
 
 ifeq ($(LOCAL_NVI_LAYOUT),y)
 export HW_AB_UPDATE_SUPPORT      := y
@@ -41,9 +40,7 @@ LOCAL_DEVICE_SEPOLICY_BLOCK      ?= device/broadcom/cypress/sepolicy/block
 else
 LOCAL_DEVICE_SEPOLICY_BLOCK      ?= device/broadcom/cypress/sepolicy-v4/block
 endif
-ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_SEPOLICY_BLOCK      += device/broadcom/cypress/sepolicy/treble
-endif
 export LOCAL_DEVICE_SEPOLICY_BLOCK
 export LOCAL_DEVICE_USE_VERITY   := y
 

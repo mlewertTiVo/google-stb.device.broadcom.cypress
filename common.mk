@@ -12,11 +12,7 @@ export BCM_BINDIST_KNL_ROOT      := device/broadcom/cypress-kernel/4.9
 export BCM_DIST_FORCED_BINDIST   := y
 
 # compile the rc's for the device.
-ifeq ($(LOCAL_DEVICE_FULL_TREBLE),y)
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.mmu.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
-else
-LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.mmu.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
-endif
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.verity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fs.rc     # verity
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/init.block.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.block.rc     # block devices
 LOCAL_DEVICE_RCS                 += device/broadcom/cypress/rcs/init.bcm.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.bcm.usb.rc # uses 'configfs'
