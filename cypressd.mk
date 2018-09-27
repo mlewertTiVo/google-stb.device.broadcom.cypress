@@ -83,7 +83,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.heap.shrink=2m \
    ro.nx.heap.gfx=64m \
    ro.nx.heap.export=2m \
+   \
    ro.nx.capable.dtu=1 \
+   ro.nx.dtu.pbuf0.addr=0x80000000 \
+   ro.nx.dtu.pbuf0.size=0x17E00000 \
+   ro.nx.dtu.spbuf0.addr=0x97E00000 \
+   ro.nx.dtu.spbuf0.size=0x17E00000 \
+   ro.nx.dtu.user.addr=0xAFC00000 \
+   ro.nx.dtu.user.size=0x10400000 \
    \
    ro.nx.hwc2.tweak.fbcomp=1 \
    ro.nx.capable.cb=1 \
@@ -94,6 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.com.google.clientidbase=android-cypress-tv \
    \
    ro.nx.trim.pip=0 \
+   ro.nx.trim.pip.qr=1 \
    ro.nx.trim.mosaic=0 \
    ro.nx.trim.mtg=0 \
    ro.nx.trim.disp=0 \
