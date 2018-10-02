@@ -55,16 +55,17 @@ include device/broadcom/cypress/common.mk
 # kernel command line.
 ifeq ($(HW_DTU_SUPPORT),n)
 ifeq ($(LOCAL_NVI_LAYOUT),y)
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=556m@510m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=562m@1066m
+KERNEL_CMDLINE      += bmem=556m@510m
+KERNEL_CMDLINE      += brcm_cma=562m@1066m
 else
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=524m@416m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=562m@940m
+KERNEL_CMDLINE      += bmem=524m@416m
+KERNEL_CMDLINE      += brcm_cma=562m@940m
 endif
 else
-LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=242m@414m
-LOCAL_DEVICE_KERNEL_CMDLINE      += brcm_cma=768m@1176m
+KERNEL_CMDLINE      += bmem=242m@414m
+KERNEL_CMDLINE      += brcm_cma=768m@1176m
 endif
+export LOCAL_DEVICE_KERNEL_CMDLINE ?= ${KERNEL_CMDLINE}
 
 # no legacy decoder (vp8, h263, mpeg4) in hardware s.2
 export HW_HVD_REVISION           := S
