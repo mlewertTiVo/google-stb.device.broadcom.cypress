@@ -44,11 +44,6 @@ LOCAL_DEVICE_SEPOLICY_BLOCK      += device/broadcom/cypress/sepolicy/treble
 export LOCAL_DEVICE_SEPOLICY_BLOCK
 export LOCAL_DEVICE_USE_VERITY   := y
 
-# bootloader firmware manipulation.
-export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
-export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
-export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.5-zb.bin
-
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 
@@ -73,9 +68,13 @@ export HW_HVD_REVISION           := S
 export HW_GPU_MMU_SUPPORT        := y
 
 # bootloader firmware manipulation.
-export LOCAL_DEVICE_SAGE_DEV_N_PROD := n
+ifneq ($(wildcard vendor/broadcom/bolt),)
+export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
 export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
 export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.5-zb.bin
+else
+export LOCAL_DEVICE_SAGE_DEV_N_PROD := n
+endif
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
