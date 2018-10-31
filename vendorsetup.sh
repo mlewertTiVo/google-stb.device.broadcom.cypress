@@ -20,3 +20,7 @@ add_lunch_combo cypress_3gb-userdebug
 add_lunch_combo cypress_3gb-user
 
 add_lunch_combo aosp_cypress-userdebug
+
+# 'ms12d' target - cypress with dolby ms12d support
+add_lunch_combo cypress_ms12d-userdebug
+add_lunch_combo cypress_ms12d-user

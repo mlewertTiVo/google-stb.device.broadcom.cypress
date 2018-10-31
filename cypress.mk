@@ -57,7 +57,11 @@ KERNEL_CMDLINE      += bmem=524m@416m
 KERNEL_CMDLINE      += brcm_cma=562m@940m
 endif
 else
+ifeq ($(BDSP_MS12_SUPPORT),D)
+KERNEL_CMDLINE      += bmem=258m@414m
+else
 KERNEL_CMDLINE      += bmem=242m@414m
+endif
 KERNEL_CMDLINE      += brcm_cma=768m@1176m
 endif
 export LOCAL_DEVICE_KERNEL_CMDLINE ?= ${KERNEL_CMDLINE}
@@ -93,7 +97,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.mma=1 \
    \
    ro.nx.heap.video_secure=80m \
-   ro.nx.heap.main=96m \
    ro.nx.heap.drv_managed=0m \
    ro.nx.heap.grow=2m \
    ro.nx.heap.shrink=2m \
@@ -113,6 +116,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 else
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.capable.dtu=1
+endif
+
+ifeq ($(BDSP_MS12_SUPPORT),D)
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.nx.heap.main=112m \
+   ro.nx.dolby.ms=12
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.nx.heap.main=96m
 endif
 
 TARGET_BOOTLOADER_BOARD_NAME ?= cypress
