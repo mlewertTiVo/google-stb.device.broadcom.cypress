@@ -83,6 +83,3 @@ endif
 KERNEL_CMDLINE      += ramoops.mem_address=0x7D000000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
 endif
 KERNEL_CMDLINE      += rootwait init=/init ro
-
-# Netflix support
-export LOCAL_DEVICE_NRDP_MODEL_GROUP := CYPRESS
