@@ -24,3 +24,7 @@ add_lunch_combo aosp_cypress-userdebug
 # 'ms12d' target - cypress with dolby ms12d support
 add_lunch_combo cypress_ms12d-userdebug
 add_lunch_combo cypress_ms12d-user
+
+# 'vmx' target - cypress with Verimatrix (VMX) CAS support
+add_lunch_combo cypress_vmx-userdebug
+add_lunch_combo cypress_vmx-user
