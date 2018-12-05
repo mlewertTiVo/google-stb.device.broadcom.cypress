@@ -2,6 +2,7 @@ ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT       := cypressd
 endif
 LOCAL_DEVICE_HWIMG_BOOT1         := n
+export TARGET_SAGE_PLATFORM      := cypress
 
 # compile the rc's for the device.
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cypressd.rc
