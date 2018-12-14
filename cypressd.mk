@@ -38,7 +38,8 @@ export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 export LOCAL_DEVICE_USE_VERITY   := y
 
-export LOCAL_DEVICE_RTS_MODE     := 6
+# warning: do not use bstc8 compression!
+export LOCAL_DEVICE_RTS_MODE     := 7
 
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
@@ -86,7 +87,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.nx.dtu.user.addr=0xAFC00000 \
    ro.nx.dtu.user.size=0x10400000 \
    \
-   ro.nx.hwc2.tweak.fbcomp=1 \
+   ro.nx.hwc2.tweak.fbcomp=0 \
    ro.nx.capable.cb=1 \
    ro.sf.lcd_density=320 \
    \
