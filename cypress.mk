@@ -60,7 +60,11 @@ else
 ifeq ($(BDSP_MS12_SUPPORT),D)
 KERNEL_CMDLINE      += bmem=258m@414m
 else
+ifeq ($(ANDROID_ENABLE_CAS_VMX),y)
+KERNEL_CMDLINE      += bmem=244m@414m
+else
 KERNEL_CMDLINE      += bmem=242m@414m
+endif
 endif
 KERNEL_CMDLINE      += brcm_cma=768m@1176m
 endif

@@ -6,3 +6,4 @@ PRODUCT_MAKEFILES += $(LOCAL_DIR)/aosp_cypress.mk
 PRODUCT_MAKEFILES += $(LOCAL_DIR)/cypress_nab.mk
 PRODUCT_MAKEFILES += $(LOCAL_DIR)/cypress_3gb.mk
 PRODUCT_MAKEFILES += $(LOCAL_DIR)/cypress_ms12d.mk
+PRODUCT_MAKEFILES += $(LOCAL_DIR)/cypress_vmx.mk
