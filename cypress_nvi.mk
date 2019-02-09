@@ -1,6 +1,7 @@
 # cypress variant which does not have a vendor partition.
 export LOCAL_NVI_LAYOUT := y
 export HW_DTU_SUPPORT   := n
+export LOCAL_FULL_TREBLE_NOT_COMPATIBLE := y
 include device/broadcom/cypress/cypress.mk
 
 PRODUCT_NAME                   := cypress_nvi
