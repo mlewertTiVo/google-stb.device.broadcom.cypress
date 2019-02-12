@@ -6,7 +6,7 @@ include device/broadcom/cypress/cypress.mk
 
 PRODUCT_NAME                   := cypress_nvi
 PRODUCT_MODEL                  := cypress
-PRODUCT_BRAND                  := broadcom
+PRODUCT_BRAND                  := google
 PRODUCT_DEVICE                 := cypress
 
 # including special configuration for nvi target.
