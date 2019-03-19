@@ -1,14 +1,14 @@
 # cypress variant which does not have a vendor partition.
 export LOCAL_NVI_LAYOUT := y
 export HW_DTU_SUPPORT   := n
+export LOCAL_FULL_TREBLE_NOT_COMPATIBLE := y
 include device/broadcom/cypress/cypress.mk
-
-# falback to legacy linker namespace
-PRODUCT_TREBLE_LINKER_NAMESPACES_OVERRIDE := false
-# do not generate a vndk
-PRODUCT_USE_VNDK_OVERRIDE := false
 
 PRODUCT_NAME                   := cypress_nvi
 PRODUCT_MODEL                  := cypress
-PRODUCT_BRAND                  := broadcom
+PRODUCT_BRAND                  := google
 PRODUCT_DEVICE                 := cypress
+
+# including special configuration for nvi target.
+include device/broadcom/common/nvi.mk
+
