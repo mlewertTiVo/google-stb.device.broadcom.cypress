@@ -40,11 +40,6 @@ export LOCAL_DEVICE_USE_VERITY   := y
 
 export LOCAL_DEVICE_RTS_MODE     := 6
 
-# bootloader firmware manipulation.
-export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
-export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
-export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.5-zb.bin
-
 # common to all cypress devices.
 include device/broadcom/cypress/common.mk
 

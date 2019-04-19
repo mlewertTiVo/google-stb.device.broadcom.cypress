@@ -47,6 +47,12 @@ export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.
 ifeq (${LOCAL_ARM_AARCH64_COMPAT_32_BIT},y)
 export LOCAL_DEVICE_BOOT         := 67108864   # 64M
 endif
+
+# bootloader firmware manipulation.
+export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
+export BOLT_IMG_SWAP_BBL            := device/broadcom/cypress/blb/zb/bbl-3.1.1-zb.bin
+export BOLT_IMG_SWAP_BFW            := device/broadcom/cypress/blb/zb/bfw-4.2.5-zb.bin
+
 export LOCAL_DEVICE_PAK_BINARY_DEV  := pak.7271.zd.bin
 export LOCAL_DEVICE_PAK_BINARY_PROD := pak.7271.zb.bin
 
