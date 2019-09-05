@@ -28,3 +28,6 @@ add_lunch_combo cypress_ms12d-user
 # 'vmx' target - cypress with Verimatrix (VMX) CAS support
 add_lunch_combo cypress_vmx-userdebug
 add_lunch_combo cypress_vmx-user
+
+# 'k64' target - cypress with kernel 64bits
+add_lunch_combo cypressk64-userdebug
