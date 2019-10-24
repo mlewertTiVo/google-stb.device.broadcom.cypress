@@ -58,7 +58,7 @@ KERNEL_CMDLINE      += brcm_cma=562m@940m
 endif
 else
 ifeq ($(BDSP_MS12_SUPPORT),D)
-KERNEL_CMDLINE      += bmem=258m@414m
+KERNEL_CMDLINE      += bmem=266m@406m
 else
 ifeq ($(ANDROID_ENABLE_CAS_VMX),y)
 KERNEL_CMDLINE      += bmem=244m@414m
@@ -115,7 +115,7 @@ endif
 
 ifeq ($(BDSP_MS12_SUPPORT),D)
 PRODUCT_PROPERTY_OVERRIDES += \
-   ro.nx.heap.main=112m \
+   ro.nx.heap.main=120m \
    ro.nx.dolby.ms=12
 else
 PRODUCT_PROPERTY_OVERRIDES += \
